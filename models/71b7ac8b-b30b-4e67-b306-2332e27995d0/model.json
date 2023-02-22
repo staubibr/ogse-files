@@ -35,7 +35,7 @@
 			"scheme": "ISO 8601"
 		}
 	],
-    "license": "MIT License",
+    "license": ["MIT License"],
     "created": "2020-05-11",
     "modified": ["2021-02-13", "2021-03-28", "2021-07-06"],
     "time": "NDTime",
@@ -46,19 +46,19 @@
     },
     "port": [{
             "type": "output",
-            "name": "port_1",
+            "name": "out_1",
             "message type": 2
         }, {
             "type": "output",
-            "name": "port_2",
+            "name": "out_2",
             "message type": 2
         }, {
             "type": "output",
-            "name": "port_3",
+            "name": "out_3",
             "message type": 2
         }, {
             "type": "input",
-            "name": "rejected",
+            "name": "rejected_1",
             "message type": 2
         }
     ],

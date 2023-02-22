@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "GIS Emergency Model",
+		"title": "Grid based GDP prediction",
 		"language": ["en-US"],
 		"description": ["Oil price model for a user selected area in Alberta.", "Workflow generated model."],
 		"subject": ["oil", "gis", "simple", "economic"],
