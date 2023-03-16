@@ -1,0 +1,60 @@
+{
+    "identifier": "9b27362b-d8bd-4de4-a0c7-0288b5f47b75",
+    "title": "Oil Price Generator",
+    "alternative": null,
+    "creator": ["Bruno St-Aubin"],
+    "contributor": ["Melanie Maddix"],
+    "language": ["en-CA"],
+    "description": ["This atomic model periodically generates a new oil price that is propagated to linked models."],
+    "subject": ["oil", "gis", "simple", "economic"],
+    "spatial coverage": [{
+            "placename": ["Alberta"],
+            "extent": [{
+                    "reference": "epsg:4326",
+					"x min": -114.0,
+					"x max": -113.0,
+					"y min": 50.0,
+					"y max": 52.0
+                }
+            ]
+        }
+    ],
+    "temporal coverage": null,
+    "license": ["https://opensource.org/licenses/MIT"],
+    "created": "2023-03-08",
+    "modified": null,
+    "time": "days",
+    "state": {
+        "description": "This model only holds the current oil price in its state",
+        "message type": 1
+    },
+    "behavior": ["Unimplemented"],
+    "port": [{
+            "type": "output",
+            "name": "oil_price_generator_out",
+            "message type": 2
+        }
+    ],
+    "message type": [{
+            "identifier": 1,
+            "field": [{
+                    "name": "barrel price",
+                    "description": "The current price of an oil barrel",
+                    "type": "numerical",
+                    "uom": "dollars",
+					"scalar": "1"
+                }
+            ]
+        }, {
+            "identifier": 2,
+            "field": [{
+                    "name": "barrel price",
+                    "description": "The current price of an oil barrel",
+                    "type": "numerical",
+                    "uom": "dollars",
+					"scalar": "1"
+                }
+            ]
+        }
+    ]
+}
