@@ -1,0 +1,57 @@
+{
+    "identifier": "8aca7ca3-aaea-4829-9400-f94cf54eafd4",
+    "title": "Commercial Building Energy Model",
+    "alternative": null,
+    "creator": ["Abu Adnan Abir"],
+    "contributor": ["Bruno St-Aubin"],
+    "language": ["en-CA"],
+    "description": ["This atomic model generates calculates the energy consumption for a commercial building."],
+    "subject": ["bem", "gis", "energy"],
+    "spatial coverage": [{
+            "placename": ["Ontario"]
+        }
+    ],
+    "temporal coverage": [{
+		"start": "01-01-2019",
+		"end": "31-12-2050",
+		"scheme": "dd-mm-yyyy"
+	}],
+    "license": ["https://opensource.org/licenses/MIT"],
+    "created": "2023-03-08",
+    "modified": null,
+    "time": "days",
+    "state": {
+        "description": "This model holds the current energy consumption considering the date and building type.",
+        "message type": 1
+    },
+    "behavior": ["This model reacts to a change in the calendar factor."],
+    "port": [{
+            "type": "input",
+            "name": "in1",
+            "message type": 2
+        },{
+            "type": "output",
+            "name": "out2",
+            "message type": 1
+        }
+    ],
+    "message type": [{
+            "identifier": 1,
+            "field": [{
+                    "name": "energy",
+                    "description": "The current energy consumption",
+                    "type": "numerical",
+					"uom": "kwh maybe ?"
+                }
+            ]
+        }, {
+            "identifier": 2,
+            "field": [{
+                    "name": "ftr",
+                    "description": "The calculated energy intensity factor",
+                    "type": "numerical"
+                }
+            ]
+        }
+    ]
+}

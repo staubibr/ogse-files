@@ -1,0 +1,68 @@
+{
+    "identifier": "69f0d3b3-6d16-4f83-9c0a-9ef47baee97e",
+    "title": "Energy Intensity Factor Generator",
+    "alternative": null,
+    "creator": ["Abu Adnan Abir"],
+    "contributor": ["Bruno St-Aubin"],
+    "language": ["en-CA"],
+    "description": ["This atomic model generates an energy intensiti factor considering the current date (year, month, day of week)."],
+    "subject": ["bem", "gis", "energy"],
+    "spatial coverage": [{
+            "placename": ["Ontario"]
+        }
+    ],
+    "temporal coverage": [{
+		"start": "01-01-2019",
+		"end": "31-12-2050",
+		"scheme": "dd-mm-yyyy"
+	}],
+    "license": ["https://opensource.org/licenses/MIT"],
+    "created": "2023-03-08",
+    "modified": null,
+    "time": "days",
+    "state": {
+        "description": "This model holds the current date (day, weekday, month, year) and the calculated factor.",
+        "message type": 1
+    },
+    "behavior": ["Constant time advance of one day, increments a day counter, calculates day of week, month, year, etc. and calculates the factor. Requires a valid date as an initialization parameter."],
+    "port": [{
+            "type": "output",
+            "name": "out1",
+            "message type": 2
+        }
+    ],
+    "message type": [{
+            "identifier": 1,
+            "field": [{
+                    "name": "day",
+                    "description": "The current day (1 to 31)",
+                    "type": "numerical"
+                },{
+                    "name": "weekday",
+                    "description": "The current day (Monday, Tuesday, Wednesday, etc.)",
+                    "type": "nominal"
+                },{
+                    "name": "month",
+                    "description": "The current month (January, February, March, etc.)",
+                    "type": "nominal"
+                },{
+                    "name": "year",
+                    "description": "The current year (2019 to 2050)",
+                    "type": "numerical"
+                },{
+                    "name": "ftr",
+                    "description": "The calculated factor",
+                    "type": "numerical"
+                }
+            ]
+        }, {
+            "identifier": 2,
+            "field": [{
+                    "name": "ftr",
+                    "description": "The calculated energy intensity factor",
+                    "type": "numerical"
+                }
+            ]
+        }
+    ]
+}
