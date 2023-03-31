@@ -1,0 +1,151 @@
+{
+    "metadata": {
+        "title": "Building Energy Model",
+        "language": ["en-US"],
+        "description": ["Building energy model at the DA level."],
+        "subject": ["gis", "building", "energy"]
+    },
+    "scenario": {
+        "models": [{
+                "id": "Energy Intensity Factor Generator",
+                "type": "69f0d3b3-6d16-4f83-9c0a-9ef47baee97e",
+                "table": "simulation_area",
+                "properties": ["dauid", "day", "weekday", "month", "year"]
+            }, {
+                "id": "Residential",
+                "type": "7cc936a3-d203-41a7-91e5-e07634c6206a",
+                "table": "residential",
+                "properties": ["area", "bt"]
+            }, {
+                "id": "Commercial",
+                "type": "8aca7ca3-aaea-4829-9400-f94cf54eafd4",
+                "table": "commercial",
+                "properties": ["area", "bt", "nof", "yoc"]
+            }
+        ],
+        "couplings": [{
+                "table": "residential",
+                "from": {
+                    "field": "da_id",
+                    "model": "Energy Intensity Factor Generator",
+                    "port": "out1"
+                },
+                "to": {
+                    "field": "id",
+                    "model": "Residential",
+                    "port": "in1"
+                }
+            },{
+                "table": "commercial",
+                "from": {
+                    "field": "da_id",
+                    "model": "Energy Intensity Factor Generator",
+                    "port": "out1"
+                },
+                "to": {
+                    "field": "id",
+                    "model": "Commercial",
+                    "port": "in1"
+                }
+            }
+        ]
+    },
+    "tasks": [{
+            "name": "select",
+            "source": "toy.da",
+            "params": {
+                "where": {
+                    "field": "dauid",
+                    "value": "@experiment:dauid"
+                }
+            }
+        }, {
+            "name": "within",
+            "source": "bem.odb_ontario",
+            "params": {
+                "table": "@step:1",
+                "join_field": "da_id"
+            }
+        }, {
+            "name": "select",
+            "source": "@step:2",
+            "params": {
+                "where": {
+                    "field": "bt",
+                    "value": ["'Single Detached'", "'Single Attached'", "'Apartments'", "'Mobile Homes'"]
+                }
+            },
+			"output": "residential"
+        }, {
+            "name": "select",
+            "source": "@step:2",
+            "params": {
+                "where": {
+                    "field": "bt",
+                    "value": ["'Educational Services'", "'Health Care and Social Assistance'", "'Information and Cultural Industries'", "'Offices'", "'Retail Trade'", "'Accommodation and Food Services'", "'Arts, Entertainment and Recreation'", "'Transportation and Warehousing'", "'Wholesale Trade'", "'Other Services'"]
+                }
+            },
+			"output": "commercial"
+        }, {
+			"name": "add_column",
+			"source": "@step:1",
+			"params": {
+				"name": "day",
+				"type": "integer"
+			}
+        }, {
+			"name": "add_column",
+			"source": "@step:5",
+			"params": {
+				"name": "weekday",
+				"type": "varchar(12)"
+			}
+        }, {
+			"name": "add_column",
+			"source": "@step:6",
+			"params": {
+				"name": "month",
+				"type": "varchar(12)"
+			}
+        }, {
+			"name": "add_column",
+			"source": "@step:7",
+			"params": {
+				"name": "year",
+				"type": "integer"
+			}
+        }, {
+			"name": "set_values",
+			"source": "@step:8",
+			"params": {
+				"column": "day",
+				"value": "@experiment:start.day",
+				"use_quotes": false
+			}
+		}, {
+			"name": "set_values",
+			"source": "@step:9",
+			"params": {
+				"column": "weekday",
+				"value": "@experiment:start.weekday",
+				"use_quotes": false
+			}
+		}, {
+			"name": "set_values",
+			"source": "@step:10",
+			"params": {
+				"column": "month",
+				"value": "@experiment:start.month",
+				"use_quotes": false
+			}
+		}, {
+			"name": "set_values",
+			"source": "@step:11",
+			"params": {
+				"column": "year",
+				"value": "@experiment:start.year",
+				"use_quotes": false
+			},
+			"output": "simulation_area"
+		}]
+}

@@ -50,7 +50,8 @@
             "source": "oil.alberta_csd_4326",
             "params": {
                 "where": {
-					"csduid": "@experiment:csduid"
+                    "field": "csduid",
+                    "value": "@experiment:csduid"
 				}
             }
         }, {
