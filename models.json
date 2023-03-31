@@ -1,1 +1,37 @@
-[{"uuid":"71b7ac8b-b30b-4e67-b306-2332e27995d0","name":"Emergency Area","description":"Emergency area model that generates emergencies periodically for a spatial area","created":"2022-02-13"},{"uuid":"89b31233-5f69-4bed-9aa4-3d0051fdfab8","name":"Hospital","description":"A hospital model that processes emergencies periodically according to a rate and capacity.","created":"2022-02-13"},{"uuid":"9b27362b-d8bd-4de4-a0c7-0288b5f47b75","name":"Oil Price Generator","description":"This atomic model periodically generates a new value for oil prices that is propagated to linked models.","created":"2022-12-20"},{"uuid":"9f998018-bf1c-48dd-b300-59ad478cd071","name":"Oil GDP Cell","description":"This atomic model represents a grid cell of 1km by 1 km in Alberta. It calculates the GST using a linear regression and the price of an oil barrel. GST is used as a proxy for GDP.","created":"2022-12-20"}]
+[{
+        "uuid": "71b7ac8b-b30b-4e67-b306-2332e27995d0",
+        "name": "Emergency Area",
+        "description": "Emergency area model that generates emergencies periodically for a spatial area",
+        "created": "2022-02-13"
+    }, {
+        "uuid": "89b31233-5f69-4bed-9aa4-3d0051fdfab8",
+        "name": "Hospital",
+        "description": "A hospital model that processes emergencies periodically according to a rate and capacity.",
+        "created": "2022-02-13"
+    }, {
+        "uuid": "9b27362b-d8bd-4de4-a0c7-0288b5f47b75",
+        "name": "Oil Price Generator",
+        "description": "This atomic model periodically generates a new value for oil prices that is propagated to linked models.",
+        "created": "2022-12-20"
+    }, {
+        "uuid": "9f998018-bf1c-48dd-b300-59ad478cd071",
+        "name": "Oil GDP Cell",
+        "description": "This atomic model represents a grid cell of 1km by 1 km in Alberta. It calculates the GST using a linear regression and the price of an oil barrel. GST is used as a proxy for GDP.",
+        "created": "2022-12-20"
+    }, {
+        "uuid": "69f0d3b3-6d16-4f83-9c0a-9ef47baee97e",
+        "name": "Energy Intensity Factor Generator",
+        "description": "This atomic model generates an energy intensiti factor considering the current date (year, month, day of week).",
+        "created": "2023-03-26"
+    }, {
+        "uuid": "7cc936a3-d203-41a7-91e5-e07634c6206a",
+        "name": "Residential Building Energy Model",
+        "description": "This atomic model generates calculates the energy consumption for a residential building.",
+        "created": "2023-03-26"
+    }, {
+        "uuid": "8aca7ca3-aaea-4829-9400-f94cf54eafd4",
+        "name": "Commercial Building Energy Model",
+        "description": "This atomic model generates calculates the energy consumption for a commercial building.",
+        "created": "2023-03-26"
+    }
+]

@@ -1,1 +1,17 @@
-[{"uuid":"1963276b-fda0-4fce-8566-ca1393243a1a","name":"Grid based GDP prediction","description":"Grid based GDP prediction workflow for the second version of the workflow engine","created":"2023-01-10"},{"uuid":"a9c067be-a38e-4155-8650-c610332212e2","name":"GIS Emergency management","description":"GIS Emergency management workflow for the second version of the workflow engine","created":"2023-02-20"}]
+[{
+        "uuid": "1963276b-fda0-4fce-8566-ca1393243a1a",
+        "name": "Grid based GDP prediction",
+        "description": "Grid based GDP prediction workflow for the second version of the workflow engine",
+        "created": "2023-01-10"
+    }, {
+        "uuid": "a9c067be-a38e-4155-8650-c610332212e2",
+        "name": "GIS Emergency management",
+        "description": "GIS Emergency management workflow for the second version of the workflow engine",
+        "created": "2023-02-20"
+    }, {
+        "uuid": "90faa599-1ab3-4cef-86ca-1f7736efea6a",
+        "name": "Building energy model",
+        "description": "Building energy model workflow at the DA level.",
+        "created": "2023-03-29"
+    }
+]
